@@ -1,0 +1,7 @@
+PhilipsHue/bin
+PhilipsHue/bin/*
+
+PhilipsHue/obj
+PhilipsHue/obj/*
+
+PhilipsHue/.vs/*
