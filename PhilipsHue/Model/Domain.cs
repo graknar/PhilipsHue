@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace PhilipsHue
 {
@@ -11,6 +9,8 @@ namespace PhilipsHue
         public Groups Groups { get; set; }
 
         public Schedules Schedules { get;set; }
+
+        public Scenes Scenes { get; set; }
     }
 
     public class Lights : Dictionary<string, Light> { }
@@ -18,4 +18,6 @@ namespace PhilipsHue
     public class Groups : Dictionary<string, Group> { }
 
     public class Schedules : Dictionary<string, Schedule> { }
+
+    public class Scenes : Dictionary<string, Scene> { }
 }
