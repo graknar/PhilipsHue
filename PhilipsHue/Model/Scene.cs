@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace PhilipsHue
@@ -12,10 +13,10 @@ namespace PhilipsHue
 		public string Type { get; set; }
 
 		[JsonPropertyName("group")]
-		public int Group { get; set; }
+		public string Group { get; set; }
 
 		[JsonPropertyName("lights")]
-		public string[] Lights { get; set; }
+		public List<string> Lights { get; set; }
 
 		[JsonPropertyName("owner")]
 		public string Owner { get; set; }

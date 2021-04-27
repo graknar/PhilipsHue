@@ -11,6 +11,7 @@ namespace PhilipsHue
         public Schedules Schedules { get;set; }
 
         public Scenes Scenes { get; set; }
+        public ResourceLinks ResourceLinks { get; set; }
     }
 
     public class Lights : Dictionary<string, Light> { }
@@ -20,4 +21,6 @@ namespace PhilipsHue
     public class Schedules : Dictionary<string, Schedule> { }
 
     public class Scenes : Dictionary<string, Scene> { }
+
+    public class ResourceLinks : Dictionary<string, ResourceLink> { }
 }

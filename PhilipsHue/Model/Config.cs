@@ -209,9 +209,9 @@ namespace PhilipsHue
 		public bool Bridge { get; set; }
 
 		[JsonPropertyName("lights")]
-		public string[] Lights { get; set; }
+		public List<string> Lights { get; set; }
 
 		[JsonPropertyName("sensors")]
-		public string[] Sensors { get; set; }
+		public List<string> Sensors { get; set; }
 	}
 }

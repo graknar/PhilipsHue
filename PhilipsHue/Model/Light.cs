@@ -130,16 +130,16 @@ namespace PhilipsHue
 	public class LightControl
     {
 		[JsonPropertyName("mindimlevel")]
-		public int mindimlevel { get; set; }
+		public int MindimLevel { get; set; }
 
 		[JsonPropertyName("maxlumen")]
 		public int MaxLumen { get; set; }
 
 		[JsonPropertyName("colorgamuttype")]
-		public string colorgamuttype { get; set; }
+		public string ColorGamutType { get; set; }
 
 		[JsonPropertyName("colorgamut")]
-		public double[][] colorgamut { get; set; }
+		public double[][] ColorGamut { get; set; }
 
 		[JsonPropertyName("ct")]
 		public ColorTemperature ColorTemperature { get; set; }
