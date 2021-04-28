@@ -12,6 +12,7 @@ namespace PhilipsHue
 
         public Scenes Scenes { get; set; }
         public ResourceLinks ResourceLinks { get; set; }
+        public Sensors Sensors { get; set; }
     }
 
     public class Lights : Dictionary<string, Light> { }
@@ -23,4 +24,5 @@ namespace PhilipsHue
     public class Scenes : Dictionary<string, Scene> { }
 
     public class ResourceLinks : Dictionary<string, ResourceLink> { }
+    public class Sensors : Dictionary<string, Sensor> { }
 }
