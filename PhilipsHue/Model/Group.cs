@@ -1,59 +1,59 @@
 ﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace PhilipsHue
 {
     public class Group
 	{
-		[JsonPropertyName("name")]
+		[JsonProperty("name")]
 		public string Name { get; set; }
 
-		[JsonPropertyName("lights")]
+		[JsonProperty("lights")]
 		public List<string> Lights { get; set; }
 
-		[JsonPropertyName("sensors")]
+		[JsonProperty("sensors")]
 		public List<string> Sensors { get; set; }
 
-		[JsonPropertyName("type")]
+		[JsonProperty("type")]
 		public string Type { get; set; }
 
-		[JsonPropertyName("state")]
+		[JsonProperty("state")]
 		public GroupState State { get; set; }
 
-		[JsonPropertyName("recycle")]
+		[JsonProperty("recycle")]
 		public bool Recycle { get; set; }
 
-		[JsonPropertyName("class")]
+		[JsonProperty("class")]
 		public string Class { get;set;}
 
-		[JsonPropertyName("action")]
+		[JsonProperty("action")]
 		public GroupAction Action { get; set; }
     }
 
 	public class GroupState
     {
 
-		[JsonPropertyName("all_on")]
-		public bool All_on { get; set; }
+		[JsonProperty("all_on")]
+		public bool AllOn { get; set; }
 
-		[JsonPropertyName("any_on")]
-		public bool Any_on { get; set; }
+		[JsonProperty("any_on")]
+		public bool AnyOn { get; set; }
     }
 	public class GroupAction 
 	{
-		[JsonPropertyName("on")]
+		[JsonProperty("on")]
 		public bool IsOn { get; set; }
 
-		[JsonPropertyName("bri")]
+		[JsonProperty("bri")]
 		public int Brightness { get; set; }
 
-		[JsonPropertyName("ct")]
+		[JsonProperty("ct")]
 		public int ColorTemperature { get; set; }
 
-		[JsonPropertyName("alert")]
+		[JsonProperty("alert")]
 		public string Alert { get; set; }
 
-		[JsonPropertyName("colormode")]
+		[JsonProperty("colormode")]
 		public string ColorMode { get; set; }
 	}
 }

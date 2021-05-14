@@ -1,54 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace PhilipsHue
 {
     public class Scene
 	{
-		[JsonPropertyName("name")]
+		[JsonProperty("name")]
 		public string Name { get; set; }
 
-		[JsonPropertyName("type")]
+		[JsonProperty("type")]
 		public string Type { get; set; }
 
-		[JsonPropertyName("group")]
+		[JsonProperty("group")]
 		public string Group { get; set; }
 
-		[JsonPropertyName("lights")]
+		[JsonProperty("lights")]
 		public List<string> Lights { get; set; }
 
-		[JsonPropertyName("owner")]
+		[JsonProperty("owner")]
 		public string Owner { get; set; }
 
-		[JsonPropertyName("recycle")]
+		[JsonProperty("recycle")]
 		public bool Recycle { get; set; }
 
-		[JsonPropertyName("locked")]
+		[JsonProperty("locked")]
 		public bool Locked { get; set; }
 
-		[JsonPropertyName("picture")]
+		[JsonProperty("picture")]
 		public string Picture { get; set; }
 
-		[JsonPropertyName("image")]
+		[JsonProperty("image")]
 		public string Image { get; set; }
 
-		[JsonPropertyName("lastupdated")]
+		[JsonProperty("lastupdated")]
 		public DateTime LastUpdated { get; set; }
 
-		[JsonPropertyName("version")]
+		[JsonProperty("version")]
 		public int Version { get; set; }
 
-		[JsonPropertyName("appdata")]
+		[JsonProperty("appdata")]
 		public AppData Appdata { get; set; }
 	}
 
 	public class AppData
     {
-		[JsonPropertyName("version")]
+		[JsonProperty("version")]
 		public int Version { get; set; }
 
-		[JsonPropertyName("date")]
+		[JsonProperty("date")]
 		public string Date { get; set; }
     }
 }

@@ -1,163 +1,163 @@
 ﻿using System;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace PhilipsHue
 {
     public class Light
 	{
-		[JsonPropertyName("state")]
+		[JsonProperty("state")]
 		public LightState State {get;set;}
 
-		[JsonPropertyName("swupdate")]
-		public SWUpdate swupdate { get; set; }
+		[JsonProperty("swupdate")]
+		public SWUpdate SoftwareUpdate { get; set; }
 
-		[JsonPropertyName("type")]
+		[JsonProperty("type")]
 		public string Type { get; set; }
 
-		[JsonPropertyName("name")]
+		[JsonProperty("name")]
 		public string Name { get; set; }
 
-		[JsonPropertyName("modelid")]
+		[JsonProperty("modelid")]
 		public string ModelId { get; set; }
 
-		[JsonPropertyName("manufacturername")]
+		[JsonProperty("manufacturername")]
 		public string ManufacturerName { get; set; }
 
-		[JsonPropertyName("productname")]
+		[JsonProperty("productname")]
 		public string ProductName { get; set; }
 
-		[JsonPropertyName("config")]
+		[JsonProperty("config")]
 		public LightConfig Config { get; set; }
 
-		[JsonPropertyName("capabilities")]
+		[JsonProperty("capabilities")]
 		public LightCapabilities Capabilities { get; set; }
 
-		[JsonPropertyName("uniqueid")]
+		[JsonProperty("uniqueid")]
 		public string UniqueId { get; set; }
 
-		[JsonPropertyName("swversion")]
-		public string swversion { get; set; }
+		[JsonProperty("swversion")]
+		public string SoftwareVersion { get; set; }
 
-		[JsonPropertyName("swconfigid")]
-		public string swconfigId{get;set;}
+		[JsonProperty("swconfigid")]
+		public string SoftwareConfigId{get;set;}
 
-		[JsonPropertyName("productid")]
+		[JsonProperty("productid")]
 		public string ProductId { get; set; }
 	}
 
 	public class ConfigStartup
 	{
 
-		[JsonPropertyName("mode")]
+		[JsonProperty("mode")]
 		public string Mode { get; set; }
 
-		[JsonPropertyName("configured")]
+		[JsonProperty("configured")]
 		public bool Configured { get; set; }
 	}
 
 	public class LightConfig
 	{
 
-		[JsonPropertyName("achertype")]
+		[JsonProperty("achertype")]
 		public string Achertype { get; set; }
 
-		[JsonPropertyName("function")]
+		[JsonProperty("function")]
 		public string Function { get; set; }
 
-		[JsonPropertyName("direction")]
+		[JsonProperty("direction")]
 		public string Direction { get; set; }
 
-		[JsonPropertyName("startup")]
+		[JsonProperty("startup")]
 		public ConfigStartup Startup { get;set; } 
 	}
 
 	public class LightState 
 	{
-		[JsonPropertyName("on")]
+		[JsonProperty("on")]
 		public bool IsOn { get; set; }
 
-		[JsonPropertyName("bri")]
+		[JsonProperty("bri")]
 		public int Brightness { get; set; }
 
-		[JsonPropertyName("hue")]
+		[JsonProperty("hue")]
 		public int Hue { get; set; }
 
-		[JsonPropertyName("sat")]
+		[JsonProperty("sat")]
 		public int Saturation { get; set; }
 
-		[JsonPropertyName("effect")]
+		[JsonProperty("effect")]
 		public string Effect { get; set; }
 
-		[JsonPropertyName("xy")]
+		[JsonProperty("xy")]
 		public double[] Position { get; set; }
 
-		[JsonPropertyName("ct")]
+		[JsonProperty("ct")]
 		public int ColorTemperature { get; set; }
 
-		[JsonPropertyName("alert")]
+		[JsonProperty("alert")]
 		public string Alert { get; set; }
 
-		[JsonPropertyName("colormode")]
+		[JsonProperty("colormode")]
 		public string ColorMode { get; set; }
 
-		[JsonPropertyName("mode")]
+		[JsonProperty("mode")]
 		public string Mode { get; set; }
 
-		[JsonPropertyName("reachable")]
+		[JsonProperty("reachable")]
 		public bool Reachable { get; set; }
 	}
 
 	public class SWUpdate 
 	{
-		[JsonPropertyName("state")]
+		[JsonProperty("state")]
 		public string State { get; set; }
 
-		[JsonPropertyName("lastinstall")]
+		[JsonProperty("lastinstall")]
 		public DateTime LastInstall { get; set; }
 	}
 
 	public class LightCapabilities
     {
-		[JsonPropertyName("certified")]
+		[JsonProperty("certified")]
 		public bool Certified { get; set; }
 
-		[JsonPropertyName("control")]
+		[JsonProperty("control")]
 		public LightControl Control { get; set; }
 
-		[JsonPropertyName("streaming")]
+		[JsonProperty("streaming")]
 		public Streaming Streaming { get; set; }
 	}
 	public class LightControl
     {
-		[JsonPropertyName("mindimlevel")]
+		[JsonProperty("mindimlevel")]
 		public int MindimLevel { get; set; }
 
-		[JsonPropertyName("maxlumen")]
+		[JsonProperty("maxlumen")]
 		public int MaxLumen { get; set; }
 
-		[JsonPropertyName("colorgamuttype")]
+		[JsonProperty("colorgamuttype")]
 		public string ColorGamutType { get; set; }
 
-		[JsonPropertyName("colorgamut")]
+		[JsonProperty("colorgamut")]
 		public double[][] ColorGamut { get; set; }
 
-		[JsonPropertyName("ct")]
+		[JsonProperty("ct")]
 		public ColorTemperature ColorTemperature { get; set; }
 	}
 	public class ColorTemperature
     {
-		[JsonPropertyName("min")]
+		[JsonProperty("min")]
 		public int Min { get; set; }
 
-		[JsonPropertyName("max")]
+		[JsonProperty("max")]
 		public int Max { get; set; }
     }
 	public class Streaming
     {
-		[JsonPropertyName("renderer")]
+		[JsonProperty("renderer")]
 		public bool Renderer { get; set; }
 
-		[JsonPropertyName("proxy")]
+		[JsonProperty("proxy")]
 		public bool Proxy { get; set; }
     }
 }

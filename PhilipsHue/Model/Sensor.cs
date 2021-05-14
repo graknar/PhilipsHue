@@ -1,63 +1,121 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using Newtonsoft.Json;
 
 namespace PhilipsHue
 {
     public class Sensor
     {
-        public string name { get; set; }
-        public string type { get; set; }
-        public string modelid { get; set; }
-        public string manufacturername { get;set;}
-        public string swversion { get; set; }
-        public string productname { get; set; }
-        public string diversityid { get; set; }
-        public string uniqueid { get; set; }
-        public Nullable<bool> recycle { get; set; }
-        public SensorState state { get; set; }
-        public SensorConfig config { get; set; }
-        public SensorCapabilites capabilities { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("modelid")]
+        public string ModelId { get; set; }
+
+        [JsonProperty("manufacturername")]
+        public string ManufacturerName { get;set;}
+
+        [JsonProperty("swversion")]
+        public string SoftwareVersion { get; set; }
+
+        [JsonProperty("productname")]
+        public string ProductName { get; set; }
+
+        [JsonProperty("diversityid")]
+        public string DiversityId { get; set; }
+
+        [JsonProperty("uniqueid")]
+        public string UniqueId { get; set; }
+
+        [JsonProperty("recycle")]
+        public Nullable<bool> Recycle { get; set; }
+
+        [JsonProperty("state")]
+        public SensorState State { get; set; }
+
+        [JsonProperty("config")]
+        public SensorConfig Config { get; set; }
+
+        [JsonProperty("capabilities")]
+        public SensorCapabilites Capabilities { get; set; }
+
+        [JsonProperty("swupdate")]
+        public SensorSoftwareUpdate SoftwareUpdate { get; set; }
     }
-    public class SensorCapabilites 
+    public class SensorCapabilites
     {
-        public bool certified { get; set; }
-        public bool primary { get; set; }
-        public List<SensorInput> inputs { get; set; }
+        [JsonProperty("certified")]
+        public bool Certified { get; set; }
+
+        [JsonProperty("primary")]
+        public bool Primary { get; set; }
+
+        [JsonProperty("inputs")]
+        public List<SensorInput> Inputs { get; set; }
     }
 
     public class SensorInput 
     {
-        public List<int> repeatintervals { get; set; }
-        public List<SensorInputEvent> events { get; set; }
+        [JsonProperty("repeatintervals")]
+        public List<int> RepeatIntervals { get; set; }
+
+        [JsonProperty("events")]
+        public List<SensorInputEvent> Events { get; set; }
     }
     public class SensorInputEvent 
     {
-        public int buttonevent { get; set; }
-        public string eventtype { get; set; }
+        [JsonProperty("buttonevent")]
+        public int ButtonEvent { get; set; }
+
+        [JsonProperty("eventtype")]
+        public string EventType { get; set; }
     }
 
     public class SensorSoftwareUpdate 
     {
-        public string state { get; set; }
-        public DateTime lastinstall { get; set; }
+        [JsonProperty("state")]
+        public string State { get; set; }
+
+        [JsonProperty("lastinstall")]
+        public DateTime LastInstall { get; set; }
     }
 
     public class SensorState 
     {
-        //String? null value possible
-        public string daylight { get; set; }
-        public string lastupdated { get; set; }
+        [JsonProperty("daylight")]
+        public string DayLight { get; set; }
+
+        [JsonProperty("lastupdated")]
+        public string LastUpdated { get; set; }
+
+        [JsonProperty("buttonevent")]
+        public Nullable<int> ButtonEvent { get; set; }
     }
 
-    public class SensorConfig 
+    public class SensorConfig
     {
-        public bool on { get; set; }
-        public Nullable<bool> configured { get; set; }
-        public Nullable<int> sunriseoffset { get; set; }
-        public Nullable<int> sunsetoffset { get; set; }
-        public Nullable<int> battery { get; set; }
-        public Nullable<bool> reachable { get; set; }
-        public List<string> pending { get; set; }
+        [JsonProperty("on")]
+        public bool IsOn { get; set; }
+
+        [JsonProperty("configured")]
+        public Nullable<bool> Configured { get; set; }
+
+        [JsonProperty("sunriseoffset")]
+        public Nullable<int> SunriseOffset { get; set; }
+
+        [JsonProperty("sunsetoffset")]
+        public Nullable<int> SunsetOffset { get; set; }
+
+        [JsonProperty("battery")]
+        public Nullable<int> Battery { get; set; }
+
+        [JsonProperty("reachable")]
+        public Nullable<bool> Reachable { get; set; }
+
+        [JsonProperty("pending")]
+        public List<string> Pending { get; set; }
     }
 }

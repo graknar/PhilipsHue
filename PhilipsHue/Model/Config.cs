@@ -1,217 +1,217 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace PhilipsHue
 {
     public class Config
 	{
-		[JsonPropertyName("name")]
+		[JsonProperty("name")]
 		public string Name { get; set; }
 
-		[JsonPropertyName("zigbeechannel")]
+		[JsonProperty("zigbeechannel")]
 		public int ZigbeeChannel { get; set; }
 
-		[JsonPropertyName("bridgeid")]
+		[JsonProperty("bridgeid")]
 		public string BridgeId { get; set; }
 
-		[JsonPropertyName("mac")]
+		[JsonProperty("mac")]
 		public string Mac { get; set; }
 
-		[JsonPropertyName("dhcp")]
+		[JsonProperty("dhcp")]
 		public bool DHCP { get; set; }
 
-		[JsonPropertyName("ipaddress")]
+		[JsonProperty("ipaddress")]
 		public string IpAddress { get; set; }
 
-		[JsonPropertyName("netmask")]
+		[JsonProperty("netmask")]
 		public string Netmask { get; set; }
 
-		[JsonPropertyName("gateway")]
+		[JsonProperty("gateway")]
 		public string Gateway { get; set; }
 
-		[JsonPropertyName("proxyaddress")]
+		[JsonProperty("proxyaddress")]
 		public string ProxyAddress { get; set; }
 
-		[JsonPropertyName("proxyport")]
+		[JsonProperty("proxyport")]
 		public int ProxyPort { get; set; }
 
-		[JsonPropertyName("UTC")]
+		[JsonProperty("UTC")]
 		public DateTime UTC { get; set; }
 
-		[JsonPropertyName("localtime")]
+		[JsonProperty("localtime")]
 		public DateTime LocalTime { get; set; }
 
-		[JsonPropertyName("timezone")]
+		[JsonProperty("timezone")]
 		public string Timezone { get; set; }
 
-		[JsonPropertyName("modelid")]
+		[JsonProperty("modelid")]
 		public string ModelId { get; set; }
 
-		[JsonPropertyName("datastoreversion")]
+		[JsonProperty("datastoreversion")]
 		public string DataStoreVersion { get; set; }
 
-		[JsonPropertyName("swversion")]
+		[JsonProperty("swversion")]
 		public string SoftwareVersion { get; set; }
 
-		[JsonPropertyName("apiversion")]
+		[JsonProperty("apiversion")]
 		public string ApiVersion { get; set; }
 
-		[JsonPropertyName("linkbutton")]
+		[JsonProperty("linkbutton")]
 		public bool LinkButton { get; set; }
 
-		[JsonPropertyName("portalservices")]
+		[JsonProperty("portalservices")]
 		public bool PortalServices { get; set; }
 
-		[JsonPropertyName("portalconnection")]
+		[JsonProperty("portalconnection")]
 		public string PortalConnection { get; set; }
 
-		[JsonPropertyName("factorynew")]
+		[JsonProperty("factorynew")]
 		public bool FactoryNew { get; set; }
 
-		[JsonPropertyName("replacesbridgeid")]
+		[JsonProperty("replacesbridgeid")]
 		public string ReplacesBridgeId { get; set; }
 
-		[JsonPropertyName("starterkitid")]
+		[JsonProperty("starterkitid")]
 		public string StarterKitId { get; set; }
 
 		[Obsolete]
-		[JsonPropertyName("swupdate")]
+		[JsonProperty("swupdate")]
 		public SoftwareUpdate SoftwareUpdate { get; set; }
 
-		[JsonPropertyName("swupdate2")]
+		[JsonProperty("swupdate2")]
 		public SoftwareUpdateV2 SoftwareUpdateV2 { get; set; }
 
-		[JsonPropertyName("portalstate")]
+		[JsonProperty("portalstate")]
 		public PortalState PortalState { get; set; }
 
-		[JsonPropertyName("backup")]
+		[JsonProperty("backup")]
 		public Backup Backup { get; set; }
 
-		[JsonPropertyName("internetservices")]
+		[JsonProperty("internetservices")]
 		public InternetServices InternetServices {get;set;}
 
-		[JsonPropertyName("whitelist")]
+		[JsonProperty("whitelist")]
 		public Dictionary<string,Whitelist> Whitelist { get; set; }	
 	}
 
 	public class Whitelist
 	{
-		[JsonPropertyName("last use date")]
+		[JsonProperty("last use date")]
 		public DateTime LastUseDate { get; set; }
 
-		[JsonPropertyName("create date")]
+		[JsonProperty("create date")]
 		public DateTime CreateDate { get; set; }
 
-		[JsonPropertyName("name")]
+		[JsonProperty("name")]
 		public string Name { get; set; }
 	}
 
 	public class InternetServices
 	{
-		[JsonPropertyName("internet")]
+		[JsonProperty("internet")]
 		public string Internet { get; set; }
 
-		[JsonPropertyName("remoteaccess")]
+		[JsonProperty("remoteaccess")]
 		public string RemoteAccess { get; set; }
 
-		[JsonPropertyName("time")]
+		[JsonProperty("time")]
 		public string Time { get; set; }
 
-		[JsonPropertyName("swupdate")]
+		[JsonProperty("swupdate")]
 		public string SoftwareUpdate { get; set; }
 	}
 
 	public class Backup
 	{
-		[JsonPropertyName("status")]
+		[JsonProperty("status")]
 		public string Status { get; set; }
 
-		[JsonPropertyName("errorcode")]
+		[JsonProperty("errorcode")]
 		public int ErrorCode { get; set; }
 	}
 
 	public class SoftwareUpdateV2
 	{
-		[JsonPropertyName("checkforupdate")]
+		[JsonProperty("checkforupdate")]
 		public bool CheckForUpdate { get; set; }
 
-		[JsonPropertyName("lastchange")]
+		[JsonProperty("lastchange")]
 		public DateTime LastChange { get; set; }
 
-		[JsonPropertyName("state")]
+		[JsonProperty("state")]
 		public string State { get; set; }
 
-		[JsonPropertyName("autoinstall")]
+		[JsonProperty("autoinstall")]
 		public AutoInstall AutoInstall { get; set; }
 	}
 
 	public class SoftwareUpdateV2Bridge
 	{
-		[JsonPropertyName("state")]
+		[JsonProperty("state")]
 		public string State { get; set; }
 
-		[JsonPropertyName("lastinstall")]
+		[JsonProperty("lastinstall")]
 		public DateTime LastInstall { get; set; }
 	}
 
 	public class AutoInstall
 	{
 
-		[JsonPropertyName("on")]
+		[JsonProperty("on")]
 		public bool IsOn { get; set; }
 
-		[JsonPropertyName("updatetime")]
+		[JsonProperty("updatetime")]
 		//T14:00:00
 		public string UpdateTime { get; set; }
 	}
 
 	public class PortalState
 	{
-		[JsonPropertyName("communication")]
+		[JsonProperty("communication")]
 		public string Communication { get; set; }
 
-		[JsonPropertyName("signedon")]
+		[JsonProperty("signedon")]
 		public bool Signedon { get; set; }
 
-		[JsonPropertyName("incoming")]
+		[JsonProperty("incoming")]
 		public bool Incoming { get; set; }
 
-		[JsonPropertyName("outgoing")]
+		[JsonProperty("outgoing")]
 		public bool Outgoing { get; set; }
 	}
 
 	[Obsolete]
 	public class SoftwareUpdate
 	{
-		[JsonPropertyName("updatestate")]
+		[JsonProperty("updatestate")]
 		public int UpdateState { get; set; }
 
-		[JsonPropertyName("checkforupdate")]
+		[JsonProperty("checkforupdate")]
 		public bool CheckForUpdate { get; set; }
 
-		[JsonPropertyName("url")]
+		[JsonProperty("url")]
 		public string Url { get; set; }
 
-		[JsonPropertyName("text")]
+		[JsonProperty("text")]
 		public string Text { get; set; }
 
-		[JsonPropertyName("notify")]
+		[JsonProperty("notify")]
 		public bool Notify { get; set; }
 
-		[JsonPropertyName("devicetypes")]
+		[JsonProperty("devicetypes")]
 		public DeviceType DeviceTypes { get; set; }
 	}
 
 	public class DeviceType
 	{
-		[JsonPropertyName("bridge")]
+		[JsonProperty("bridge")]
 		public bool Bridge { get; set; }
 
-		[JsonPropertyName("lights")]
+		[JsonProperty("lights")]
 		public List<string> Lights { get; set; }
 
-		[JsonPropertyName("sensors")]
+		[JsonProperty("sensors")]
 		public List<string> Sensors { get; set; }
 	}
 }

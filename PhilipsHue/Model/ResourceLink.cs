@@ -1,31 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json.Serialization;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace PhilipsHue
 {
     public class ResourceLink
     {
-		[JsonPropertyName("name")]
+		[JsonProperty("name")]
 		public string Name { get; set; }
 
-		[JsonPropertyName("description")]
+		[JsonProperty("description")]
 		public string Description { get; set; }
 
-		[JsonPropertyName("type")]
+		[JsonProperty("type")]
 		public string Type { get; set; }
 
-		[JsonPropertyName("classid")]
+		[JsonProperty("classid")]
 		public int ClassId { get; set; }
 
-		[JsonPropertyName("owner")]
+		[JsonProperty("owner")]
 		public string Owner { get; set; }
 
-		[JsonPropertyName("recycle")]
+		[JsonProperty("recycle")]
 		public bool Recycle { get; set; }
 
-		[JsonPropertyName("links")]
+		[JsonProperty("links")]
 		public List<string> Links { get; set; }
 	}
 }
